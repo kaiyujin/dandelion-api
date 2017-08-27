@@ -1,6 +1,5 @@
-from django.conf.urls import url
-from . import views
+from rest_framework import routers
+from .views import PeriodViewSet
 
-urlpatterns = [
-    url(r'^$', views.index, name="index"),
-]
+router = routers.DefaultRouter()
+router.register(r'periods', PeriodViewSet)

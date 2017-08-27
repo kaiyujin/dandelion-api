@@ -15,8 +15,9 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from apps.wcm.urls import router as wcm_router
 
 urlpatterns = [
-    url(r'^wcm/', include('apps.wcm.urls')),
+    url(r'^wcm/', include(wcm_router.urls)),
     url(r'^admin/', admin.site.urls),
 ]

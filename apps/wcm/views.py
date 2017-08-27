@@ -1,6 +1,11 @@
+# coding: utf-8
+import django_filters
+from rest_framework import viewsets, filters
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import Status, Period
+from .serializer import PeriodSerializer
 
-
-def index(request):
-    return HttpResponse("Hello, world. You're at the wcm index.")
+class PeriodViewSet(viewsets.ModelViewSet):
+    queryset = Period.objects.all()
+    serializer_class = PeriodSerializer
