@@ -2,7 +2,7 @@
 from rest_framework import routers
 from .views import *
 
-router = routers.DefaultRouter()
+router = routers.SimpleRouter(trailing_slash=False)
 router.register(r'periods', PeriodViewSet)
 router.register(r'sheets', SheetViewSet)
 router.register(r'wills', WillViewSet)
